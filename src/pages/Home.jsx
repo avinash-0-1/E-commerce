@@ -1,8 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router'
 import './Home.css'
 
-const Home = () => {
+function Home() {
   return (
+    <>
+      <title>E-Commerce Home</title>
+
      <div className="home-page">
       <div className="products-grid">
         <div className="product-container">
@@ -153,6 +157,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+  </>
   )
 }
 

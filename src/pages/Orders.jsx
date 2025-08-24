@@ -1,6 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router'
 import './Orders.css'
-const Orders = () => {
+
+function Orders () {
   return (
     <>
             <div className="orders-page">
@@ -49,11 +51,11 @@ const Orders = () => {
             </div>
 
             <div className="product-actions">
-              <a href="tracking.html">
+              <Link to="/tracking">
                 <button className="track-package-button button-secondary">
                   Track package
                 </button>
-              </a>
+              </Link>
             </div>
 
             <div className="product-image-container">
@@ -77,11 +79,11 @@ const Orders = () => {
             </div>
 
             <div className="product-actions">
-              <a href="tracking.html">
+              <Link to="/tracking">
                 <button className="track-package-button button-secondary">
                   Track package
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -128,11 +130,11 @@ const Orders = () => {
             </div>
 
             <div className="product-actions">
-              <a href="tracking.html">
+              <Link to="/tracking">
                 <button className="track-package-button button-secondary">
                   Track package
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

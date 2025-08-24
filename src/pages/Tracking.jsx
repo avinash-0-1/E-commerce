@@ -1,14 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router'
 import './Tracking.css'
 
-const Tracking = () => {
+function Tracking() {
   return (
     <>
    <div className="tracking-page">
       <div className="order-tracking">
-        <a className="back-to-orders-link link-primary" href="orders.html">
+        <Link className="back-to-orders-link link-primary" to="/orders">
           View all orders
-        </a>
+        </Link>
 
         <div className="delivery-date">
           Arriving on Monday, June 13
