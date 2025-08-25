@@ -1,12 +1,39 @@
-# React + Vite
+# 🛒 E-Commerce Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple **E-Commerce web application built with the MERN Stack** as a practice project to learn full-stack development.
 
-Currently, two official plugins are available:
+### Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* React.js
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
 
-## Expanding the ESLint configuration
+### Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* Product listing
+* Product details
+* Add/remove items from cart
+* REST API
+* MongoDB integration
+
+### Run Locally
+
+```bash
+git clone https://github.com/your-username/your-repository.git
+cd your-repository
+npm install
+npm run dev
+```
+## 🎯 Purpose
+
+This project was built primarily for **learning and practice** while working with the MERN stack and understanding how a frontend communicates with a backend and database.
+
+## Learning Resource
+
+This project was built while learning from the **SuperSimpleDev** YouTube course.
+
+### Author
+
+**Avinash Raj** — [GitHub](https://github.com/avinash-0-1)
