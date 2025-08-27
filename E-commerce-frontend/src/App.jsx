@@ -10,7 +10,6 @@ function App() {
 
   return (
     <>
-      <Header />
       <Routes>
         <Route index element={<Home />} />
         <Route path='checkout' element={<CheckOut />} />

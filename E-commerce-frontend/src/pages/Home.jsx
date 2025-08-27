@@ -1,12 +1,32 @@
 import React from 'react'
-import { products } from '../data/products'
+import { useState , useEffect } from 'react'
+import axios from 'axios'
+// import { useState } from 'react'
+// import { products } from '../data/products'
 import { Link } from 'react-router'
 import './Home.css'
+import Header from '../components/Header'
 
-function Home() {
+function Home() { 
+const [products, setProducts] = useState([]);
+const [cart, setCart] = useState([]);
+
+useEffect(()=>{
+  axios.get('http://localhost:3000/api/products')
+  .then((response)=>{
+    setProducts(response.data);
+  })
+  axios.get('http://localhost:3000/api/cart-items')
+  .then((response)=>{
+    setCart(response.data);
+  })
+},[])
+
   return (
     <>
       <title>E-Commerce Home</title>
+
+      <Header cart={cart} />
 
       <div className="home-page">
         <div className="products-grid">
@@ -62,7 +82,6 @@ function Home() {
               </div>
             );
           })}
-
         </div>
       </div>
     </>

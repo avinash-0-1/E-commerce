@@ -1,10 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router'
+import Header from '../components/Header'
 import './Orders.css'
 
 function Orders () {
   return (
     <>
+      <Header cart={cart} />
+      
             <div className="orders-page">
       <div className="page-title">Your Orders</div>
 
