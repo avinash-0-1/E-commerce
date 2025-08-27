@@ -103,7 +103,7 @@
   justify-content: end;
 }
 
-.header .orders-link {
+.header .orders-link{
   color: white;
 
   display: flex;
@@ -111,8 +111,12 @@
   padding-left: 13px;
   padding-right: 13px;
 }
+.header .orders-link.active .orders-text{
+  text-decoration: underline;
+  color: #ffdd00;
+}
 
-.header .orders-text {
+.header .orders-text{
   display: block;
   font-size: 15px;
   font-weight: 700;
