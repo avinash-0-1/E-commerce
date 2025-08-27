@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import Header from '../components/Header'
 import './Orders.css'
 
-function Orders () {
+function Orders ({cart}) {
   return (
     <>
       <Header cart={cart} />

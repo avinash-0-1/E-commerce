@@ -7,18 +7,13 @@ import { Link } from 'react-router'
 import './Home.css'
 import Header from '../components/Header'
 
-function Home() { 
+function Home({cart}) { 
 const [products, setProducts] = useState([]);
-const [cart, setCart] = useState([]);
 
 useEffect(()=>{
   axios.get('http://localhost:3000/api/products')
   .then((response)=>{
     setProducts(response.data);
-  })
-  axios.get('http://localhost:3000/api/cart-items')
-  .then((response)=>{
-    setCart(response.data);
   })
 },[])
 
