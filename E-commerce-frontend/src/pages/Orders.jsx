@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import axios from 'axios'
+import { useState } from 'react'
 import { Link } from 'react-router'
 import Header from '../components/Header'
 import './Orders.css'
 
 function Orders ({cart}) {
+  const [orders, setOrders] = useState([]);
+
+  useEffect(()=>{
+    axios.get('/api/orders').then((response)=>{
+      setOrders(response.data)
+    })
+  },[])
   return (
     <>
       <Header cart={cart} />

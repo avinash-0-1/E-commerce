@@ -1,0 +1,176 @@
+:root {
+  --bg-color: #F4F4F0;
+  --text-color: #1A1A1A;
+  --accent-blue: #4361EE;
+  --accent-yellow: #FFD166;
+  --accent-red: #FF4A3F;
+  --border-width: 4px;
+}
+
+.not-found-container {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  /* Monospace font contributes to the mechanical/brutalist look */
+  font-family: 'Courier New', Courier, monospace; 
+  color: var(--text-color);
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Background Geometric Shapes */
+.shape-circle {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  width: 6rem;
+  height: 6rem;
+  background-color: var(--accent-blue);
+  border: var(--border-width) solid var(--text-color);
+  border-radius: 50%;
+  box-shadow: 6px 6px 0px 0px var(--text-color);
+  animation: spin 12s linear infinite;
+  z-index: -1;
+}
+
+.shape-square {
+  position: absolute;
+  bottom: 4rem;
+  right: 4rem;
+  width: 8rem;
+  height: 8rem;
+  background-color: var(--accent-yellow);
+  border: var(--border-width) solid var(--text-color);
+  box-shadow: 6px 6px 0px 0px var(--text-color);
+  animation: pulse 4s ease-in-out infinite;
+  z-index: -1;
+}
+
+/* Main Content Box */
+.content-box {
+  position: relative;
+  background-color: #ffffff;
+  border: var(--border-width) solid var(--text-color);
+  padding: 2rem;
+  max-width: 42rem;
+  width: 100%;
+  box-shadow: 12px 12px 0px 0px var(--text-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 16px 16px 0px 0px var(--text-color);
+}
+
+/* Typography */
+.title-404 {
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  margin: 0 0 0.5rem 0;
+}
+
+.animated-zero {
+  display: inline-block;
+  color: var(--accent-red);
+  animation: bounce 3s infinite;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 1.5rem 0;
+  border-bottom: var(--border-width) solid var(--text-color);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.description {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 0 0 2.5rem 0;
+  line-height: 1.6;
+  max-width: 32rem;
+}
+
+/* Call to Action Button */
+.btn-home {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  background-color: var(--text-color);
+  border: var(--border-width) solid var(--text-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-home:hover {
+  background-color: var(--accent-red);
+  color: var(--text-color);
+  box-shadow: 6px 6px 0px 0px var(--text-color);
+}
+
+.btn-home:active {
+  transform: translateY(4px);
+  box-shadow: 0px 0px 0px 0px var(--text-color);
+}
+
+.btn-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.btn-home:hover .btn-icon {
+  transform: translateX(-0.5rem);
+}
+
+/* Animation Keyframes */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .title-404 {
+    font-size: 8rem;
+  }
+  .content-box {
+    padding: 4rem;
+  }
+  .subtitle {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .shape-circle, .shape-square {
+    display: none; /* Hide background shapes on mobile to prevent clutter */
+  }
+}
