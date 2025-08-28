@@ -1,7 +1,7 @@
 function formateMoney(amount) {
     
     return (
-        `$ ${((amount) / 100)}`
+        `${((amount) / 100)}`
     )
 }
 

@@ -2,9 +2,9 @@ import { Routes, Route } from 'react-router';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from './components/Header'
-import Home from './pages/Home';
-import CheckOut from './pages/CheckOut'
-import Orders from './pages/Orders'
+import Home from './pages/home/Home';
+import CheckOut from './pages/CheckOut/CheckOut'
+import Orders from './pages/Orders/Orders'
 import Tracking from './pages/Tracking'
 import ErrorPage from './pages/ErrorPage';
 
