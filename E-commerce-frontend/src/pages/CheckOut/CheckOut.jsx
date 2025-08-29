@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router'
 // import Header from '../../components/Header'    HW FOR ME..!!
-import OrderSummary from './OrderSummary';
+import OrderSummary from './OrderSummary/OrderSummary';
 import PaymentSummary from './PaymentSummary';
 import './CheckOut.css'
 

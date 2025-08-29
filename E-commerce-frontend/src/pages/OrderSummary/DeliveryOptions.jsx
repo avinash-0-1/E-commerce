@@ -1,5 +1,5 @@
 import React from 'react'
-import formateMoney from '../../utils/Money'
+import formateMoney from '../../../utils/Money'
 import dayjs from 'dayjs'
 function DeliveryOptions({deliveryOpt,cartItem}) {
     return (
@@ -31,32 +31,6 @@ function DeliveryOptions({deliveryOpt,cartItem}) {
                 )
             })
             }
-            <div className="delivery-option">
-                <input type="radio"
-                    className="delivery-option-input"
-                    name="delivery-option-1" />
-                <div>
-                    <div className="delivery-option-date">
-                        Wednesday, June 15
-                    </div>
-                    <div className="delivery-option-price">
-                        $4.99 - Shipping
-                    </div>
-                </div>
-            </div>
-            <div className="delivery-option">
-                <input type="radio"
-                    className="delivery-option-input"
-                    name="delivery-option-1" />
-                <div>
-                    <div className="delivery-option-date">
-                        Monday, June 13
-                    </div>
-                    <div className="delivery-option-price">
-                        $9.99 - Shipping
-                    </div>
-                </div>
-            </div>
         </div>
     )
 }
