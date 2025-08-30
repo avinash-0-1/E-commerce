@@ -11,25 +11,25 @@ import ErrorPage from './pages/ErrorPage';
 function App() {
   const [cart, setCart] = useState([]);
 
-  useEffect(()=>{
-     const fetchProductData = async() => {
-     const response = await axios.get('/api/cart-items?expand=product');
-     setCart(response.data);
-    }
-    
-    fetchProductData();
-  },[])
+  const LoadCart = async () => {
+    const response = await axios.get('/api/cart-items?expand=product');
+    setCart(response.data);
+  }
+
+  useEffect(() => {
+    LoadCart();
+  }, [])
 
   return (
     <>
       <Routes>
-        <Route index element={<Home cart={cart} />} />
-        <Route path='checkout' element={<CheckOut cart={cart}/>} />
-        <Route path='orders' element={<Orders cart={cart}/>} />
-        <Route path='tracking/:orderId/:productId' element={<Tracking cart={cart}/>} />
+        <Route index element={<Home cart={cart} LoadCart={LoadCart} />} />
+        <Route path='checkout' element={<CheckOut cart={cart} LoadCart={LoadCart}/>} />
+        <Route path='orders' element={<Orders cart={cart} />} />
+        <Route path='tracking/:orderId/:productId' element={<Tracking cart={cart} />} />
         <Route
           path="*"
-          element={<ErrorPage/>}
+          element={<ErrorPage cart={cart} />}
         />
       </Routes>
     </>

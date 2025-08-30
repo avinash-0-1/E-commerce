@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
+import { useParams, Link } from 'react-router'
+import axios from 'axios';
 import dayjs from 'dayjs'
 import Header from '../components/Header'
-import { useParams, Link } from 'react-router'
 import './Tracking.css'
-import axios from 'axios';
 
 
 function Tracking({ cart }) {
@@ -33,15 +33,15 @@ function Tracking({ cart }) {
   const totalDeliveryTimeMs = orderProduct.estimatedDeliveryTimeMs - order.orderTimeMs;
   const timePassedMs = dayjs().valueOf() - order.orderTimeMs
 
-  const deliveryPercent = Math.min((timePassedMs / totalDeliveryTimeMs) * 100, 100);
+  const deliveryPercent = Math.min((timePassedMs / totalDeliveryTimeMs) * 100 , 100);
 
 
-    const isPreparing = deliveryPercent < 33;
+  const isPreparing = deliveryPercent < 33;
 
-    const isShipped = deliveryPercent >=33 && deliveryPercent < 100;
+  const isShipped = deliveryPercent >= 33 && deliveryPercent < 100;
 
-    const isDelivered = deliveryPercent === 100;
-  
+  const isDelivered = deliveryPercent === 100;
+
 
 
   return (
@@ -81,7 +81,7 @@ function Tracking({ cart }) {
           </div>
 
           <div className="progress-bar-container">
-            <div className="progress-bar" style={{ width: `${deliveryPercent}%`, color: 'red' }}></div>
+            <div className="progress-bar" style={{ width: `${deliveryPercent}%`}}></div>
           </div>
         </div>
       </div>
