@@ -3,8 +3,21 @@ import dayjs from 'dayjs';
 import formateMoney from '../../utils/Money';
 import { Fragment } from 'react';
 import { Link } from 'react-router';
+import axios from 'axios';
 
-function OrdersGrid({ orders }) {
+function OrdersGrid({ orders, LoadCart }) {
+
+    async function AddToCart(prdId) {
+        await axios.post('/api/cart-items', {
+            productId: prdId,
+            quantity: 1,
+
+        })
+
+        LoadCart();
+        console.log('now i have to do somthing here so that it gets added to the cart!!')
+    }
+
     return (
         <div className="orders-grid">
             {orders.map((order) => {
@@ -57,12 +70,16 @@ function OrdersGrid({ orders }) {
                                                 Quantity: {ordProduct.quantity}
                                             </div>
 
-                                            <button className="buy-again-button button-primary">
+                                            <button className="buy-again-button button-primary"
+                                                onClick={() => { AddToCart(ordProduct.product.id) }}
+                                            >
                                                 <img
                                                     className="buy-again-icon"
                                                     src="images/icons/buy-again.png"
                                                 />
-                                                <span className="buy-again-message">Add to Cart</span>
+                                                <span className="buy-again-message">
+                                                    Add to Cart
+                                                </span>
                                             </button>
                                         </div>
 
